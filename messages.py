@@ -1,14 +1,19 @@
 RU_TEXTS = {
     "start_message": (
-        "<b>Добро пожаловать в Lolz Team Market</b>\n\n"
-        "<b></b>\n"
-        "Безопасные сделки с гарантией\n\n"
-        "<blockquote>🔹 Защита от мошенников</blockquote>\n"
-        "<blockquote>🔹 Автоматическое удержание средств</blockquote>\n"
-        "<blockquote>🔹 Прозрачная статистика</blockquote>\n\n"
-        "<blockquote>🔹 Поддержка 24/7</blockquote>\n\n"
-        "<blockquote>🔹 История сделок</blockquote>\n\n"
+        "<b>Добро пожаловать в Lolz Bot – Сервис гарантированных безопасных сделок</b>\n\n"
+        ""
+        "<b>💼 Покупайте и продавайте всё, что угодно – безопасно!</b>\n"
+        "От Telegram-подарков и NFT до токенов и фиата – сделки проходят легко и без риска.\n\n"
+        "<blockquote expandable>"
+        "🔹 Защита от мошенников"
+        "🔹 Автоматическое удержание средств\n"
+        "🔹 Прозрачная статистика\n\n"
+        "🔹 Поддержка 24/7"
+        "🔹 История сделок"
+        "</blockquote>"
         "Выберите нужный раздел ниже:"
+        ""
+        ""
     ),
     "wallet_menu_message": "Выберите способ оплаты:",
     "add_ton_wallet_message": (
@@ -151,6 +156,9 @@ RU_TEXTS = {
     "create_deal_button": "📄 Создать сделку",
     "referral_button": "🧷 Реферальная ссылка",
     "change_lang_button": "🌐 Сменить язык",
+    "channel_button": "📝 Lolz News",
+    "webapp_button": "🚀 Открыть мини-приложение",
+    "more_button": "📄 Статистика бота",
     "support_button": "📞 Поддержка",
     "english_lang_button": "🇬🇧 English",
     "russian_lang_button": "🇷🇺 Русский",
@@ -197,7 +205,7 @@ RU_TEXTS = {
 
 EN_TEXTS = {
     "start_message": (
-        "<b>Welcome to NEXUS – a reliable P2P guarantor</b>\n\n"
+        "<b>Welcome to Lolz Bot</b>\n\n"
         "<b>💼 Buy and sell anything – safely!</b>\n"
         "From Telegram gifts and NFTs to tokens and fiat – transactions are easy and risk-free.\n\n"
         "🔹 Convenient wallet management\n"
